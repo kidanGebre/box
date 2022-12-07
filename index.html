@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cude</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            margin-inline: auto;
+            perspective: 600px;
+            margin-top: 100px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: translateZ(-150px);
+            transform: translateZ(-150px);
+            animation: spin 20s infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateX(360deg) rotateZ(360deg) rotateY(360deg);
+            }
+        }
+
+        .face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            color: aliceblue;
+            font-weight: bolder;
+            font-size: 30px;
+            border: 2px solid black;
+            overflow: hidden;
+        }
+
+        .face img {
+            width: 300px;
+        }
+
+        .front {
+            background-color: rgba(137, 43, 226, 0.7);
+            transform: rotateY(0deg) translateZ(150px);
+
+        }
+
+        .back {
+            background-color: rgba(35, 198, 247, 0.7);
+            transform: rotateY(180deg) translateZ(150px);
+        }
+
+        .left {
+            background-color: rgba(0, 100, 0, 0.7);
+            transform: rotateY(-90deg) translateZ(150px);
+
+        }
+
+        .right {
+            background-color: rgba(220, 20, 60, 0.7);
+            transform: rotateY(90deg) translateZ(150px);
+
+        }
+
+        .top {
+            background-color: rgba(184, 135, 11, 0.7);
+            transform: rotateX(90deg) translateZ(150px);
+        }
+
+        .bottom {
+            background-color: rgba(128, 128, 128, 0.7);
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="face front"><img src="IMG_3120.png" alt=""></div>
+            <div class="face back"><img src="IMG_20200925_031450.jpg" alt=""></div>
+            <div class="face right"><img src="IMG_20200925_031820.jpg" alt=""></div>
+            <div class="face left"><img src="IMG_3122.png" alt=""></div>
+            <div class="face top"><img src="IMG_3130.png" alt=""></div>
+            <div class="face bottom"><img src="IMG_3253.png" alt=""></div>
+        </div>
+    </div>
+</body>
+
+</html>
